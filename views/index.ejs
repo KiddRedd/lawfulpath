@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('./partials/header.ejs') %>
+<body>
+    <section class="above-header">
+        <h2>What is a Maxim of law?</h2>
+    </section>      
+    
+    <div class="answers">
+     <h2>1.<span> <p> An established principle or proposition. A principle of law universally admitted, as being just and consonant with reason. </p> </span></h2>
+     <h2>2.<span><p> Maxims in law are somewhat like axioms in geometry. 1 Bl. Com. 68. They are principles and authorities, 
+            and part of the general customs or common law of the land; and are of the same strength as acts of parliament, when the judges have determined 
+            what is a maxim; which belongs to the judges and not the jury. Terms do Ley; Doct. & Stud. Dial. 1, c. 8. Maxims of the law are holden for law, and all other cases that may be applied to them shall be taken for granted. 1 Inst. 11. 67; 4 Rep. See 1 Com. c. 68; Plowd. 27, b. </p></span></h2>
+        
+            <h2>3.<span> <p> The application of the maxim to the case before the court, is generally the only difficulty. The true method 
+            of making the application is to ascertain how the maxim arose, and to consider whether the case to which it is applied 
+            is of the same character, or whether it is an exception to an apparently general rule. </p></span></h2>
+            <h2>4.<span> <p> The alterations of any of the maxims of the common law are dangerous. 2 Inst. 210. </p></span></h2>
+            <hr>
+            <span><h3><a href="https://www.lawfulpath.com/ref/bouvier/god-.shtml">Word Study of God</a></h3></span>
+                <span><h3><a href="https://www.lawfulpath.com/ref/bouvier/author-.shtml">Word Study of Authority</a></h3></span>
+                <span><h3><a href="https://www.lawfulpath.com/ref/bouvier/truth-.shtml">Word Study of Truth</a></h3></span>
+                <span><h3><a href="https://www.lawfulpath.com/ref/bouvier/lawful-.shtml">Word Study of Lawful</a></h3></span>    
+            <hr>
+            <span><h3>The following are some of the more important maxims that anyone in any community should know. Starting with its Latin root or French, English version then its source if applicable, you will be familiar with natural law.</h3></span>
+        
+                
+
+                                
+        </div>
+               
+         <main class="maxims-box">
+             <div id="eng">Maxims in Latin and English</div>
+             <button id="btn"> New Maxim</button>
+          </main>
+            
+  <%- include ('./partials/footer.ejs') %>
+<script>
+let btn = document.getElementById('btn');
+let maxims = document.getElementById('eng');
+
+// quotes
+const quotes = [
+    "Eyyo this be a quote - Lyndon",
+    "Another quote... dat lady thick - LA",
+    "A communi observantia non est recedendum. There should be no departure from common observance or usage. Co. Litt. 186.",
+    "A l'impossible nul n'est tenu. No one is bound to do what is impossible. Bouv. Inst. n. 601." ,
+    "A verbis legis non est recedendum. From the words of the law there must be no departure. Broom's Max. 268; 5 Rep. 119; Wing. Max. 25.",
+    "Absentia ejus qui reipublicae causa abest, neque ei, neque alii damnosa esse debet. The absence of him who is employed in the service of the state, ought not to be burdensome to him nor to others. Dig. 50, 17, 140.",
+    "Absoluta sentetia expositore non indiget. An absolute unqualified sentence or proposition, needs no expositor. 2 Co. Inst. 533.",
+    "Abundaans cautela non nocet. Abundant caution does no harm. 11 Co. 6.",
+    "Accessorius sequit naturam sui principalis. An accessary follows the nature of his principal. 3 Co. Inst. 349.",
+    "Accessorium non ducit sed sequitur suum principale. The accessory does not lead, but follow its principal. Co. Ltt 152.",
+    "Accusare nemo debet se, nisi coram Deo. No one ought to accuse himself, unless before God .Hard. 139.",
+    "Actio exteriora indicant interiora secreta. External actions show internal secrets. 8 Co. R. 146.",
+    "Actio non datur non damnificato. An action is not given to him who has received no damages.",
+    "Actio personalis moritur cum persona. A personal action dies with the person. This must be understood of an action for a tort only.",
+    "Actor qui contra regulam quid adduxit, non est audiendus. He ought not to be heard who advances a proposition contrary to the rules of law.",
+    "Actor sequitur forum rei. The plaintiff must follow the forum of the thing in dispute.",
+    "Actore non probante reus absolvitur. When the plaintiff does not prove his case, the defendant is absolved.",
+    "Actus Dei nemini facit injuriam. The act of God <> does no injury; that is, no one is responsible for inevitable accidents. 2 Blacks. Com. 122.",
+    "Actus incaeptus cujus perfectio pendet, ex voluntate partium, revocari potest; si autem pendet ex voluntate tertia personae, vel ex contingenti, revocari non potest. An act already begun, the completionof which depends upon the will of the parties, may be recalled; but if it depend on the consent of a third person, or of a contingency, it cannot be recalled. Bacon's Max. Reg. 20.",
+    "Actus me invito factus, non est meus actus. An act done by me against my will,is not my act.",
+    "Actus non reum facit, nisi mens sit rea. An act does not make a person guilty, unless the intention be also guilty. This maxim applies only to criminal cases; in civil matters it is otherwise. 2 Bouv. Inst. n. 2211.",
+    "Actus legitimi non recipiunt modum. Acts required by law to be done, admit of no qualification. Hob. 153.",
+    "Actus legis nemini facit injuriam, The act of the law does no one an injury. 5 Co. 116.",
+    "Ad proximum antecedens fiat relatio, nisi impediatur sententia. The antecedent bears relation to what follows next, unless it destroys the meaning of the sentence.",
+    "Ad quaestiones facti non respondent judices; ad quaestione legis non respondent juratores. The judges do not answer to questions of fact; the jury do not answer to questions of law. Cu. Litt. 295.",
+    "Aestimatio praeteriti delicti ex postremo facto nunquam crescit. The estimation of a crime committed never increased from a subsequent fact. Bac. Max. Reg. 8.",
+    "Ambiguitas verborum latens verificatione suppletur; nam quod exfacto oritur ambiguum verificatione facti tollitur. A hidden ambiguity of the words is supplied by the verification, for whatever ambiguity arises concerning the deed itself is removed by the verification of the deed. Bacon's Max. Reg. 23.",
+    "Aqua cedit solo. The water yields or accompanies the soil. The grant of the soil or land carries the water.",
+    "Aqua curit et debet currere. Water runs and ought to run. 3 Rawle, 84, 88.",
+    "Aequitas agit in personam. Equity acts upon the person. 4 Bouv. Inst. n. 3733.",
+    "Aequilas sequitier legem. Equity follows the law. 1 Story, Eq. Jur. 64.; 3 Wooddes. Lect. 479, 482.",
+    "Aequum et bonum, est lex legum. What is good and equal, is the law of laws. Hob. 224.",
+    "Affirmati, non neganti incumbit probatio. The proof lies upon him who affirms, not on him who denies.",
+    "Aliud est celare, aliud tacere. To conceal is one thing, to be silent another.",
+    "Alternatica petitio non est audienda. An alternate petition is not to be heard. 5 Co. 40.",
+    "Animus ad se omne jus ducit. It is to the intention that all law applies.",
+    "Animus moninis est anima scripti. The intention of the party is the soul of the instrument. 3 Bulstr. 67.",
+    "Apices juris non sunt jura. Points of law are not laws. Co. Litt. 304; 3 Scott, N. P. R. 773.",
+    "Arbitrium est judicium. An award is a judgment. Jenk Cent. 137.",
+    "Argumentum majori ad minus negative non valet; valet converso. An argument from the greater to the less is of no force negatively; conversely it is. Jenk. Cent. 281.",
+    "Argumentum divisione est fortissimum in jure. An argument arising from a division is most powerful in law. 6 Co. 60.",
+    "Argumentum ab inconvenienti est validum in lege; quia lex non permittit aliquod inconveniens. An argument drawn from what is inconvenient is good in law, because the law will not permit any inconvenience. Co.Litt. 258. ",
+    "Argumentum ab impossibili plurmum valet in lege. An argument deduced from authority great avails in law. Co. Litt. 92.",
+    "Argumentum ab authoritate est fortissimum in lege. An argument drawn from authority is the strongest in law. Co. Litt. 254.",
+    "Argumentum simili valet in lege. An argument drawn from a similar case, or analogy, avails in law. Co. Litt. 191.",
+    "Augupia verforum sunt judice indigna. A twisting of language is unworthy of a judge. Hob. 343.",
+    "Bona fides non patitur, ut bis idem exigatur. Natural equity or good faith do no allow us to demand twice the payment of the same thing. Dig. 50, 17, 57.",
+    "Boni judicis est ampliare jurisdictionem. It is the part of a good judge to enlarge his jurisdiction; that, his remedial authority. Chan. Prec. 329; 1 Wils 284; 9 M. & Wels. 818.",
+    "Boni judicis est causas litium derimere. It is the duty of a good judge to remove the cause of litigation. 2 Co. Inst. 304.",
+    "Bonum defendentis ex integr caus, malum ex quolibet defectu. The good of a defendant arises from a perfect case, his harm from some defect. 11 Co. 68.",
+    "Bonum judex secundum aequum et bonum judicat, et aequitatem stricto juri praefert. A good judge decides according to justice and right, and prefers equity to strict law. Co. Litt. 24.",
+    "Bonum necessarium extra terminos necessitatis non est bonum. Necessary good is not good beyond the bounds of necessity. Hob. 144.",
+    "Casus fortuitus non est sperandus, et nemo tenetur devinare. A fortuitous event is not to be foreseen, and no person is held bound to divine it. 4 Co. 66.",
+    "Casus omissus et oblivione datus dispositioni communis juris relinquitur. A case omitted and given to oblivion is left to the disposal of the common law. 5 Co. 37.",
+    "Catalla just possessa amitti non possunt. Chattels justly possessed cannot be lost. Jenk. Cent. 28.",
+    "Catalla repuntantur inter minima in lege. Chattels are considered in law among the minor things. Jenk Cent. 52.",
+    "Causa proxima, non remota spectatur. The immediate, and not the remote cause, is to be considered. Bac. Max. Reg. 1.",
+    "Caveat emptor. Let the purchaser beware. ",
+    "Cavendum est fragmentis. Beware of fragments. Bacon, Aph. 26. ",
+    "Cessante causa, cessat effectus. The cause ceasing, the effect must cease.",
+    "C'est le crime qui fait la honte, et non pas l'echafaud. It is the crime which causes the shame, and not the scaffold.",
+    "Charta de non ente non valet. A charter or deed of a thing not in being, is not valid. Co. Litt. 36.",
+    "Chirographum apud debitorem repertum praesumitur solutum. A deed or bond found with the debtor is presumed to be paid.",
+    "Circuitus est evitandus. Circuity is to be avoided. 5 Co. 31.",
+    "Clausula inconsuetae semper indicunt suspicionem. Unusual clauses always induce a suspicion. 3 Co. 81.",
+    "Clausula quae abrogationem excludit ab initio non valet. A clause in a law which precludes its abrogation, is invalid from the beginning. Bacon's Max. Reg. 19, p. 89.",
+    "Clausula vel dispositio inutilis per praesumptionem remotam vel causam, ex post facto non fulcitur. A useless clause or disposition is not supported by a remote presumption, or by a cause arising afterwards. Bacon's Max. Reg. 21.",
+    "Cogitationis poenam nemo patitur. No one is punished for merely thinking of a crime.",
+    "Commodum ex injuri su non habere debet. No man ought to derive any benefit of his own wrong. Jenk. Cent. 161.",
+    "Communis error facit jus. A common error makes law. What was af first illegal, being repeated many times, is presumed to have acquired the force of usage, and then it would be wrong to depart from it. The converse of this maxim is communis error no facit just. ",
+    "A common errordoes not make law. Confessio facta in judicio omni probatione major est. A confession made in court is of greater effect than any proof. Jenk. Cent. 102; 11 Co. 30.",
+    "Confirmare nemo potest priusquam just ei acciderit. No one can confirm beforethe right accrues to him. 10 Co. 48.",
+    "Confirmatio est nulla, ubi donum praecedens est invalidum. A confirmation is null where the preceding gift is invalid. Co. Litt. 295.",
+    "Conjunctio mariti et faeminae est de jure naturae. The union of a man and a woman is of the law of nature.",
+    "Consensus non concubitus facit nuptiam. Consent, not lying together, constitutes marriage.",
+    "Consensus facit legem. Consent makes the law. A contract is a law between the parties, which can acquire force only by consent.",
+    "Consensus tollit errorem. Consent removes or obviates a mistake. Co. Litt. 126.",
+    "Consentientes et agentes pari poen plectentur. Those consenting and those perpetrating are embraced in the same punishment. 5 Co. 80.",
+    "Consequentiae non est consequentia. A consequence ought not to be drawn from another consequence. Bacon, De Aug. Sci. Aph. 16.",
+    "Consilii, non fraudulenti, nulla est obligatio. Advice, unless fraudulent, does not create an obligation.",
+    "Constructio contra rationem introducta, potius usurpatio quam consuetudo appellari debet. A custom introduced against reason ought rather to be called an usurpation than a custom. Co. Litt. 113.",
+    "Construction legis non facit injuriam. The construction of law works not an injury. Co. Litt. 183; Broom's Max. 259.",
+    "Consuetudo debet esse certa. A custom ought to be certain. Dav. 33.",
+    "Consuetudo est optimus interpres legum. Custome is the best expounder of the law. 2 Co. Inst. 18; Dig. 1, 3, 37; Jenk. Cent. 273.",
+    "Consuetudo est altera lex. Custom is another law. 4 Co. 21.",
+    "Consuetudo loci observanda est. The custom of the place is to be observed. 6 Co. 67.",
+    "Consuetudo praescripta et legitima vincit legem. A prescriptive and legitimate custom overcomes the law. Co. Litt. 113.",
+    "Consuetudo semel reprobata non potest amplius induci. Custom once disallowed cannot again be produced. Dav. 33.",
+    "Consuetudo voluntis ducit, lex nolentes trahit. Custom leads the willing, law, law compels or draws the unwilling. Jenk. Cent. 274.",
+    "Contestio litis eget terminos contradictaris. An issue requires terms of contradiction; that is, there can be no issue without an affirmative on one side and a negative on the other.",
+    "Contemporanea expositio est optima et fortissima in lege. A contemporaneous exposition is the best and most powerful in the law. 2 Co. Inst. 11.",
+    "Contr negantem principia non est disputandum. There is no disputing against or denying principles. Co. Litt. 43.",
+    "Contr non volentem agere nulla currit praescriptio. No prescription runs against a person unable to act. Broom's Max. 398.",
+    "Contr veritatem lex numquam aliquid permittit. The law never suffers anything contrary to truth. 2 Co. Inst. 252.But sometimes it allows a conclusive presumption in opposition to truth See 3 Bouv. Inst. n. 3061.",
+    "Contractus legem ex conventione accipiunt. The agreement of the parties makes the law of the contract. Dig. 16, 3, 1, 6.", 
+    "Contractus ex turpi caus, vel contr bonos mores nullus est. A contract founded on a base and unlawful  consideration, or against good morals, is null. Hob. 167; Dig. 2, 14, 27, 4.", 
+    "Conventio vincit legem. The agreement of the parties overcomes or prevails against the law. Story, Ag. See Dig. 16, 3, 1, 6.", 
+    "Copulatio verborum indicat acceptionem in eodem sensu. Coupling words together shows that they ought to be understood in the same sense. Bacom's Max. in Reg. 3.", 
+    "Corporalis injuria non recipit aestimationem de futuro. A personal injury does no receive satisfaction from a future course of proceding. Bacon's Max. in Reg. 6.", 
+    "Cuilibet in arte sua herito credendum est. Every one should be believed skilful in how own art. Co. Litt. 125. Vide Experts; Opinion.", 
+    "Cujus est commodum ejus debet esse incommodum. He who receives the benefit should also bear the disadvantage.", 
+    "Cujus est dare ejus est disponere. He who has a right to give, has the right to dispose of the gift.", 
+    "Cujus per errorem dati repetitio est, ejus consult dati donatio est. Whoever pays by mistake what he does not owe, may recover it back; but he who pays, knowing he owes nothing; is presumed to give.", 
+    "Cujus est solum, ejus est usque ad caelum. He who owns the soil, owns up to the sky. Co. Litt. 4 a; Broom's Max. 172; Shep. To. 90; 2 Bouv. Inst. n. 15, 70.", 
+    "Cujus est divisio alterius est electio. Which ever of two parties has the division, the other has the choice. Co. Litt. 166.", 
+    "Cujusque rei potissima pars principium est. The principal part of everything is the beginning. Dig. 1, 2, 1; 10 Co. 49.", 
+    "Culpa tenet suos auctores. A fault finds its own. Culpa est immiscere se rei ad se non pertinenti. It is a fault to meddle with what does not belong to or does not concern you. Dig. 50, 17, 36.", 
+    "Culpa paena par esto. Let the punishment be proportioned to the crime.", 
+    "Culpa lata aequiparatur dolo. A concealed fault is equal to a deceit.", 
+    "Cui pater est populus non habet ille patrem. He to whom the people is father, has not a father. Co. Litt. 123.",
+    "Cum confitente sponte mitius est agendum. One making a voluntary confession, is to be dealt with more mercifully. 4 Co. Inst. 66.",
+    "Cum duo inter se pugnantia reperiuntur in testamento ultimum ratum est. When two things repugnant to each other are found in a will, the last is to be confirmed. Co. Litt. 112.",
+    "Cum legitimae nuptiae factae sunt, patrem liberi sequuntur. Children born under a legitimate marriage follow the condition of the father.",
+    "Cum adsunt testimonia rerum quid opus est verbis. When the proofs of facts are present, what need is there of words. 2 Buls. 53.",
+    "Curiosa et captiosa intepretatio in lege reprobatur. A curious and captious interpretation in the law is to be reproved. 1 Buls. 6.",
+    "Currit tempus contra desides et sui juris contemptores. Time runs against the slothful and those who neglect their rights.",
+    "Cursus curiae est lex curiae. The practice of the court is the law of the court. 3 Buls. 53.",
+    "De fide et officio judicis non recipitur quaestio; sed de scientia, sive error sit juris sive facti. Of the credit and duty of a judge, noquestion can arise; but it is otherwise respecting his knowledge,whether he be mistaken as to the law or fact. Bacon's max. Reg. 17.",
+    "De jure judices, de facto juratores, respondent. The judges answer to the law, the jury to the facts.",
+    "De minimis non curat lex. The law does not notice or care for trifling matters. Broom's Max. 333; Hob. 88; 5 Hill, N.Y. Rep. 170.",
+    "De morte hominis nulla est cunctatio longa. When the death of a human being may be the consequence, no delay is long. Col Litt. 134. When the question is on the life or death of a man, no delay is too long to admit of inquiring into facts.",
+    "De non apparentibus et non existntibus eadem est ratio. The reason is the same respecting things which do not appear, and those which do not exist.",
+    "De similibus ad similia eadem ratione procedendum est. From similars to similars, we are to proceed by the same rule.",
+    "De similibus idem est judicium. Concerning similars the judgment is the same. 7 Co. 18.",
+    "Debet esse finis litium. There ought to be an end of law suits. Jenk. Cent. 61.",
+    "Debet qui juri subjacere ubi delinquit. Every one ought to be subject to the law of the place where he offends. 3 Co. Inst. 34.",
+    "Debile fundamentum, fallit opus. Where there is a weak foundation, the work falls. 2 Bouv. Inst. n. 2068.",
+    "Debita sequuntur personam debitoris. Debts follow the person of the debtor. Story, Confl. of Laws, 362.",
+    "Debitor non praesumitur donare. A debtor is not presumed to make a gift. See 1 Kames' Eq. 212; Dig. 50, 16, 108.",
+    "Debitum et contractus non sunt nullius loci. Debt and contract are of no particular place.",
+    "Delegata potestas non potest delegari. A delegated authority cannot be again delegated. 2 Co. Inst. 597; 5 Bing. N. C. 310; 2 Bouv. Inst. n. 1300.",
+    "Delegatus non potest delegare. A delegate or deputy cannot appoint another. 2 Bouv. Inst. n. 1936; Story, Ag. 33.",
+    "Derativa potestas non potest esse major primitiva. The power which is derived cannot be greater than that from which it is derived.",
+    "Derogatur legi, cum pars detrahitur; abrogatur legi, cum prorsus tollitur. To derogate from a law is to enact something contrary to it; to abrogate a law, is to abolish it entirely. Dig. 50, 16, 102. See 1 Bouv. Inst. n. 91.",
+    "Designatio unius est exclusio alterius, et expressum facit cessare tacitum. The appointment or designation of one is the exclusion of another; and that expressed makes that which is implied cease. Co. Litt.210.",
+    "Dies dominicus non est juridicus. Sunday is not a day in law. Co. Litt. 135 a; 21 Saund. 291. See Sunday.",
+    "Dies inceptus pro completo habetur. The day of undertaking or commencement of the business is held as complete.",
+    "Dies incertus pro conditione habetur. A day uncertain is held as a condition.",
+    "Dilationes in lege sunt odiosae. Delays in law are odious. ",
+    "Disparata non debent jungi. Unequal things ought not to be joined. Jenk. Cent. 24.",
+    "Dispensatio est vulnus, quod vulnerat jus commune. A dispensation is a wound which wounds a common right. Dav. 69.",
+    "Dissimilum dissimiles est ratio. Of disimilars the rule is dissimilar. Co. Litt. 191.",
+    "Divinatio non interpretatio est, quae omnino recedit a litera. It is a guess not interpretation which altogether departs from the letter. Bacon's Max. in Reg. 3, p. 47.",
+    "Dolosus versatur generalibus. A deceiver deals in generals. 2 Co. 34. ",
+    "Dolus auctoris non nocet successori. The fraud of a possessor does not prejudice the successor.",
+    "Dolus circuitu non purgator. Fraud is not purged by circity. Bacons Max. in Reg. 1.",
+    "Domus sua cuique est tutissimum refugium. Every man's house is his castle. 5 Rep. 92.",
+    "Domus tutissimum cuique refugium atque receptaculum. The habitation of each one is an inviolable asylum for him. Dig. 2, 4, 18.",
+    "Donatio perficitur possesione accipientis. A gift is rendered complete by the possession of the receiver. See 1 Bouv. Innt. n. 712; 2 John. 52;2 Leigh, 337.",
+    "Donatio non praesumitur. A gift is not presumed.",
+    "Donatur nunquam desinit possidere antequam donatarius incipiat possidere. He that gives never ceases to possess until he that receives begins to possess. Dyer, 281.",
+    "Dormiunt aliquando leges, nunquam moriuntur. The laws sometimes sleep, but neyer die. 2 Co. Inst. 161.",
+    "Dos de dote peti non debet. Dower ought not to be sought from dower. 4Co. 122.",
+    "Duas uxores eodem tempore habere non potest. It is not lawful to have two wives at one time. Inst. 1, 10, 6.",
+    "Duo non possunt in solido unam rem possidere. Two cannot possess one thing each in entirety. Co. Litt. 368.",
+    "Duplicationem possibilitatis lex non patitur. It is not allowed to double a possibility. 1 Roll. R. 321."
+];
+
+
+btn.addEventListener('click', function() {
+    let randomQuote = quotes[Math.floor(Math.random() * quotes.length )]    
+    eng.innerHTML = randomQuote;
+   })
+   
+   // INTERVAL QUOTES
+   function rndQuotes(){
+    const rndQuote = quotes[Math.floor(Math.random() * quotes.length )];
+    document.getElementById('eng').innerHTML = rndQuote
+   }
+   
+   setInterval(rndQuotes, "20000");
+</script>
+
+
+</body>
+</html>
