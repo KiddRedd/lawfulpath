@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Oswald:wght@600&display=swap');
+
+body{
+max-width: 1200px;
+margin: 20px auto;
+background-color: rgba(46, 46, 172, 0.884);
+}
+
+   /* RESET ALL FAMILIES */
+p, h1, h2, h3, a, ul{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #222;
+    font-family: 'Merriweather', serif;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    text-align: center;
+      }
+
+    .above-header {
+        background-color: orange;
+        text-align: center;
+        }
+    .above-header h2{
+            font-size: 32px;
+          }
+
+      .answers{
+          margin: 0;
+         text-wrap: balance ;    
+          border: gold solid 2px;
+          border-radius: 9px;
+        }
+    .answers h2{
+        font-size: 26px;
+    }
+
+    .answers h2:hover{
+        color: crimson;
+        cursor: pointer;
+        }
+
+    .answers h3{
+        font-size: 26px;
+        color: rgb(255, 251, 251);
+        text-shadow: 3px 0px 3px silver;
+    }
+
+    .answers p {
+       font-size: 20px;
+       color: rgb(228, 217, 217);
+       text-shadow: 2px 0px 3px gold;
+
+    }
+
+        .answers p:hover{
+        color: crimson;
+        cursor: pointer;
+        }
+        
+        
+        .answers h3 :hover{
+            color: crimson;
+            cursor: pointer;
+            font-size: 26px;
+        }
+
+        .maxims-box{
+        margin: auto;
+        border: 9px solid cornflowerblue;
+                 }
+
+        #eng{
+            font-size: 36px;    
+            color: white;
+            text-shadow: 2px 4px 2px black;
+            text-align: center;
+            
+       }
+
+       #btn{
+        height: 50px;
+        width: 150px;
+        margin: 50px;
+        background-color: rgb(192, 191, 191) ;
+        font-size: 23px;
+         
+       }
